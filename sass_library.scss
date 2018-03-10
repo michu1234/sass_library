@@ -1,0 +1,81 @@
+/* Table of contents
+=====================
+// 1. Variables
+// 2. Placeholders
+// 3. Functions
+// 4. Mixins
+// 10. Animations
+=====================
+*/
+
+// 1. Variables
+$main_website: rgb(48, 63, 159);
+$main_background: #f2f2f2;
+$light_background: #ffffff;
+$main_button: #6bd400;
+
+$header_font: #000000;
+$label_font: #505256;
+$input_font: #9b9b9b;
+
+$input_border: #dadada;
+$input-submit_border: #5cb300;
+
+$grid-template_mobile: "sum" auto 
+                       "info" auto 
+                       "payments" auto / auto;
+$grid-template_tablet: "info sum" minmax(auto, 500px)
+                       "payments ." auto / 2fr 1fr;
+
+$grid-template_desktop: "info sum" auto 
+                        "payments ." auto / 2fr 1fr;
+                       
+$tablet: "(min-width: 768px) and (max-width: 1023px)";
+$desktop: "(min-width: 1024px) and (max-width: 1423px)";
+$screen: "(min-width: 1424px)";
+
+// 2. Placeholders
+%text--center {
+  text-align: center;
+}
+
+%position-absolute {
+  position: absolute;
+}
+
+%display-inlineblock {
+  display: inline-block;
+}
+
+%border-radius {
+  border-radius: 5px;
+}
+
+%box--center {
+  margin: 0 auto;
+}
+
+%numbers {
+  margin-left: -25px;
+  vertical-align: top;
+  padding-right: 5px;
+  font-size: 1.8rem;
+  font-weight: 400;
+}
+
+%flex {
+  display: flex;
+}
+
+%pointer {
+  cursor: pointer;
+}
+
+%transition {
+  transition: all 0.2s ease-in-out;
+}
+
+// 3. Functions
+@function prc($el, $target) {
+  @return (100% * $el) / $target;
+}
