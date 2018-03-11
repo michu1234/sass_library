@@ -110,8 +110,6 @@ $screen: "(min-width: 1424px)";
   @return (100% * $el) / $target;
 }
 
-
-
 // 4. Mixins
 //   media queries
 @mixin large {
@@ -131,12 +129,14 @@ $screen: "(min-width: 1424px)";
       @content;
     }
   }
+
 // pseudo class
   @mixin pseudo($display: block, $pos: absolute, $content: ''){
     content: $content;
     display: $display;
     position: $pos;
 }
+
 // triangles
 @mixin triangle($color, $direction, $size: 6px, $position: absolute, $round: false){
     @include pseudo($pos: $position);
@@ -172,14 +172,22 @@ $screen: "(min-width: 1424px)";
 @mixin font($font-style, $font-variant, $font-weight, $font-size, $line-height, $font-family){
     font: $font-style, $font-variant, $font-weight, #{$font-size}/#{$line-height}, "#{$font-family}", Arial, Helvetica, sans-serif;
 }
+
 // background 
 @mixin bg($color, $url, $repeat, $position){
     background: $color, url("#{$url}"), $repeat, $position;
 }
+
 // truncate
 @mixin truncate($truncation-boundary) {
     max-width: $truncation-boundary;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+
+// font face
+@mixin font-face($family, $url) {
+  font-family: "#{$family}";
+  src: url("#{$url}");
 }
